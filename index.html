@@ -3,150 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UFO Kazino</title>
+<title>Caspian Men</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#0a0a0a;
-color:white;
-}
-
-.header{
-padding:20px;
-text-align:center;
-font-size:32px;
-font-weight:bold;
-background:#111;
-border-bottom:1px solid #222;
-}
-
-.logo{
-font-size:40px;
-}
-
-.login{
-padding:40px 20px;
-text-align:center;
-}
-
-input{
-width:280px;
-padding:15px;
-border:none;
-border-radius:10px;
-margin-top:15px;
-font-size:18px;
-}
-
-button{
-margin-top:15px;
-padding:15px 35px;
-border:none;
-border-radius:10px;
-background:#00ff88;
-font-weight:bold;
-cursor:pointer;
-}
-
-.panel{
-display:none;
-padding:20px;
-}
-
-.balance{
-background:#151515;
-padding:20px;
-border-radius:15px;
-margin-bottom:20px;
-font-size:24px;
-text-align:center;
-}
-
-.games{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-}
-
-.game{
-background:#151515;
-padding:25px;
-border-radius:15px;
-text-align:center;
-font-size:20px;
-}
-
-.footer{
-margin-top:20px;
-padding:15px;
-text-align:center;
-color:#888;
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<div class="header">
-<div class="logo">🛸 UFO KAZINO</div>
-</div>
+<header>
+<nav class="navbar">
+<div class="logo">CASPIAN MEN</div>
 
-<div class="login" id="login">
-<h2>PIN Kodunu Daxil Et</h2>
+<ul class="nav-links">
+<li><a href="#home">Ana Səhifə</a></li>
+<li><a href="#products">Məhsullar</a></li>
+<li><a href="#contact">Əlaqə</a></li>
+</ul>
+</nav>
+</header>
 
-<input id="pin" placeholder="PIN">
+<section id="home" class="hero">
 
-<br>
+<div class="overlay"></div>
 
-<button onclick="enterSite()">DAXİL OL</button>
+<div class="hero-content">
+<h1>CASPIAN MEN</h1>
+<h2>KİŞİLİYİN TƏRZİ BURADA</h2>
 
-<p style="margin-top:15px;color:#888;">
-Demo PIN: 123456
+<p>
+Premium keyfiyyətli geyimlər seçici kişilər üçün.
 </p>
+
+<a href="#products" class="btn">
+KOLEKSİYAYA KEÇ
+</a>
 </div>
 
-<div class="panel" id="panel">
+</section>
 
-<div class="balance">
-💰 Balans: 1000 AZN
+<section class="features">
+
+<div class="feature-box">
+<i class="fa-solid fa-award"></i>
+<h3>Yüksək Keyfiyyət</h3>
+<p>Premium materiallar</p>
 </div>
 
-<div class="games">
+<div class="feature-box">
+<i class="fa-solid fa-truck"></i>
+<h3>Sürətli Çatdırılma</h3>
+<p>Bütün Azərbaycan üzrə</p>
+</div>
 
-<div class="game">🎰 Slot</div>
+<div class="feature-box">
+<i class="fa-solid fa-rotate-left"></i>
+<h3>Asan Qaytarış</h3>
+<p>Məmnuniyyət zəmanəti</p>
+</div>
 
-<div class="game">🎲 Lucky Dice</div>
+</section>
 
-<div class="game">🃏 Cards</div>
+<section id="products" class="products">
 
-<div class="game">🏆 Jackpot</div>
+<h2>Yeni Məhsullar</h2>
+
+<div class="product-grid">
+
+<div class="card">
+<img src="images/jeans1.jpg">
+<h3>Tommy Hilfiger Jeans</h3>
+<span>89.99 ₼</span>
+</div>
+
+<div class="card">
+<img src="images/shirt1.jpg">
+<h3>Kətan Köynək</h3>
+<span>59.99 ₼</span>
+</div>
+
+<div class="card">
+<img src="images/shoe1.jpg">
+<h3>Dəri Krasovka</h3>
+<span>99.99 ₼</span>
+</div>
+
+<div class="card">
+<img src="images/jeans2.jpg">
+<h3>Ralph Lauren Jeans</h3>
+<span>89.99 ₼</span>
+</div>
+
+<div class="card">
+<img src="images/vest1.jpg">
+<h3>Yelek</h3>
+<span>69.99 ₼</span>
+</div>
 
 </div>
 
-<div class="footer">
-UFO Kazino Demo
-</div>
+</section>
+
+<section class="banner">
+
+<div class="banner-content">
+
+<h2>TƏRZ SƏNİN İMZANDIR</h2>
+
+<p>
+Seçimini et, fərqliliyini ortaya qoy.
+</p>
+
+<a href="#products" class="btn">
+KOLEKSİYAYA BAX
+</a>
 
 </div>
 
-<script>
-function enterSite(){
-const pin=document.getElementById("pin").value;
+</section>
 
-if(pin==="123456"){
-document.getElementById("login").style.display="none";
-document.getElementById("panel").style.display="block";
-}else{
-alert("PIN yanlışdır");
-}
-}
-</script>
+<section id="contact" class="contact">
+
+<h2>Əlaqə</h2>
+
+<div class="contact-grid">
+
+<a class="contact-card"
+href="https://wa.me/994996133355">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<div>
+<h3>WhatsApp</h3>
+<p>+994 0996133355</p>
+</div>
+
+</a>
+
+<a class="contact-card"
+href="https://www.instagram.com/caspian_men_787">
+
+<i class="fa-brands fa-instagram"></i>
+
+<div>
+<h3>Instagram</h3>
+<p>@caspian_men_787</p>
+</div>
+
+</a>
+
+<a class="contact-card"
+href="https://www.tiktok.com/@caspian_men_787">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<div>
+<h3>TikTok</h3>
+<p>@caspian_men_787</p>
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2025 Caspian Men
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
