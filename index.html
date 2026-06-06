@@ -1,179 +1,25 @@
-<!DOCTYPE html>
-<html lang="az">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caspian Men</title>
+<input type="text" id="search" placeholder="Ad və soyad">
+<button onclick="axtar()">Axtar</button>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+<div id="result"></div>
 
-<body>
+<script>
+let data = [];
 
-<header>
-<nav class="navbar">
-<div class="logo">CASPIAN MEN</div>
+fetch("data.json")
+  .then(r => r.json())
+  .then(d => data = d);
 
-<ul class="nav-links">
-<li><a href="#home">Ana Səhifə</a></li>
-<li><a href="#products">Məhsullar</a></li>
-<li><a href="#contact">Əlaqə</a></li>
-</ul>
-</nav>
-</header>
+function axtar() {
+  const q = document.getElementById("search").value.toLowerCase();
 
-<section id="home" class="hero">
+  const netice = data.filter(x =>
+    (x.ad + " " + x.soyad).toLowerCase().includes(q)
+  );
 
-<div class="overlay"></div>
-
-<div class="hero-content">
-<h1>CASPIAN MEN</h1>
-<h2>KİŞİLİYİN TƏRZİ BURADA</h2>
-
-<p>
-Premium keyfiyyətli geyimlər seçici kişilər üçün.
-</p>
-
-<a href="#products" class="btn">
-KOLEKSİYAYA KEÇ
-</a>
-</div>
-
-</section>
-
-<section class="features">
-
-<div class="feature-box">
-<i class="fa-solid fa-award"></i>
-<h3>Yüksək Keyfiyyət</h3>
-<p>Premium materiallar</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-truck"></i>
-<h3>Sürətli Çatdırılma</h3>
-<p>Bütün Azərbaycan üzrə</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-rotate-left"></i>
-<h3>Asan Qaytarış</h3>
-<p>Məmnuniyyət zəmanəti</p>
-</div>
-
-</section>
-
-<section id="products" class="products">
-
-<h2>Yeni Məhsullar</h2>
-
-<div class="product-grid">
-
-<div class="card">
-<img src="images/jeans1.jpg">
-<h3>Tommy Hilfiger Jeans</h3>
-<span>89.99 ₼</span>
-</div>
-
-<div class="card">
-<img src="images/shirt1.jpg">
-<h3>Kətan Köynək</h3>
-<span>59.99 ₼</span>
-</div>
-
-<div class="card">
-<img src="images/shoe1.jpg">
-<h3>Dəri Krasovka</h3>
-<span>99.99 ₼</span>
-</div>
-
-<div class="card">
-<img src="images/jeans2.jpg">
-<h3>Ralph Lauren Jeans</h3>
-<span>89.99 ₼</span>
-</div>
-
-<div class="card">
-<img src="images/vest1.jpg">
-<h3>Yelek</h3>
-<span>69.99 ₼</span>
-</div>
-
-</div>
-
-</section>
-
-<section class="banner">
-
-<div class="banner-content">
-
-<h2>TƏRZ SƏNİN İMZANDIR</h2>
-
-<p>
-Seçimini et, fərqliliyini ortaya qoy.
-</p>
-
-<a href="#products" class="btn">
-KOLEKSİYAYA BAX
-</a>
-
-</div>
-
-</section>
-
-<section id="contact" class="contact">
-
-<h2>Əlaqə</h2>
-
-<div class="contact-grid">
-
-<a class="contact-card"
-href="https://wa.me/994996133355">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-<div>
-<h3>WhatsApp</h3>
-<p>+994 0996133355</p>
-</div>
-
-</a>
-
-<a class="contact-card"
-href="https://www.instagram.com/caspian_men_787">
-
-<i class="fa-brands fa-instagram"></i>
-
-<div>
-<h3>Instagram</h3>
-<p>@caspian_men_787</p>
-</div>
-
-</a>
-
-<a class="contact-card"
-href="https://www.tiktok.com/@caspian_men_787">
-
-<i class="fa-brands fa-tiktok"></i>
-
-<div>
-<h3>TikTok</h3>
-<p>@caspian_men_787</p>
-</div>
-
-</a>
-
-</div>
-
-</section>
-
-<footer>
-© 2025 Caspian Men
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+  document.getElementById("result").innerHTML =
+    netice.map(x =>
+      `<p>${x.ad} ${x.soyad}</p>`
+    ).join("");
+}
+</script>
